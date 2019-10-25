@@ -20,39 +20,38 @@
 
        What is your zipcode?
 
-5. Set the `Default value` property (next to Max turn count) to `'98052'` (include the quotes). 
+6. Set the `Default value` property (next to Max turn count) to `'98052'` (include the quotes). 
 
    > By default prompts are configured to ask the user for information `Max turn count` number of times (defaults to 3). When this happens, the prompt will stop and set the `Default value` to the `Property` and move forward with the conversaiton. 
 
    ![](./assets/03/zipcode-prompt.png)
 
-6. Next, click the `User Answers` tab in the property editor. This part of the prompt represents the user's response, including where to store the value and how to pre-process it.
+7. Next, click the `User Answers` tab in the property editor. This part of the prompt represents the user's response, including where to store the value and how to pre-process it.
 
    ![](./assets/03/prompt-tabs.png)
 
-7. Here, we can specify what property in memory will be used to store the user's response. In `Property to fill`, enter the value:
+8. Here, we can specify what property in memory will be used to store the user's response. In `Property to fill`, enter the value:
 
        user.zipcode
 
      For `Output Format`, select `trim`
 
-   ![](./assets/03/zipcode-answer.png)
+     ![](./assets/03/zipcode-answer.png)
 
-8. Click on the `Exceptions` tab in the property editor. This section allows you to specify validation rules for the prompt, as well as error messages that will be used if the user provides an invalid response.
+9. Click on the `Exceptions` tab in the property editor. This section allows you to specify validation rules for the prompt, as well as error messages that will be used if the user provides an invalid response.
 
    ![](./assets/03/tab-exceptions.png)
 
-9. In the `Unrecognized Prompt` field, enter:
+10. In the `Unrecognized Prompt` field, enter:
 
        - Sorry, I do not understand '{this.value}'. Please specify a zipcode in the form 12345
 
-
-      In the `Invalid Prompt` field, also enter:
+     In the `Invalid Prompt` field, also enter:
 
        - Sorry, '{this.value}' is not valid. I'm looking for a 5 digit number as zipcode. Please specify a zipcode in the form 12345
 
 
-10. In `Validation Rules`, type:
+11. In `Validation Rules`, type:
       > validation rule 1 says we need a five characters
     
         length(this.value) == 5
@@ -90,11 +89,11 @@ After this action occurs, the bot can use `{user.zipcode}` in messages, and more
 
 The http request action is found under the `Access external resources >` menu in the flow "+" button.
 
-11. Add an `Http Request` step to your flow.
+12. Add an `Http Request` step to your flow.
 
     ![](./assets/03/http-step.png)
 
-12. In the properties editor,
+13. In the properties editor,
 
       Set the method to `GET`
 
@@ -114,13 +113,13 @@ This will cause the bot to make an HTTP request to the url specified. The refere
 
 After making an HTTP request, we need to test the status of the response. To do this, we'll use an If/Else branch.
 
-13. Use the '+' button, then choose `Flow`, then choose  `Branch: If/Else`
+14. Use the '+' button, then choose `Flow`, then choose  `Branch: If/Else`
 
-14. In the property editor on the right, set the `condition` field to:
+15. In the property editor on the right, set the `condition` field to:
 
         dialog.api_response.statusCode == 200
 
-15. In the `true` branch, use the "+" button, then select `Manage properties >`, then `Set a Property`
+16. In the `true` branch, use the "+" button, then select `Manage properties >`, then `Set a Property`
 
       Set Property to:
 
@@ -132,7 +131,7 @@ After making an HTTP request, we need to test the status of the response. To do 
 
     ![](./assets/03/set-property-condition.png)
 
-16. Still in the `true` branch, use the "+" button, then select `Send Messages >`, then `Send a response`
+17. Still in the `true` branch, use the "+" button, then select `Send Messages >`, then `Send a response`
 
     Set the text of the message to:
 
@@ -140,13 +139,13 @@ After making an HTTP request, we need to test the status of the response. To do 
     
     ![](./assets/03/ifelse.png)
 
-17. Now, in the `false` branch, use the "+" button, then select `Send Messages >`, then `Send an activity`
+18. Now, in the `false` branch, use the "+" button, then select `Send Messages >`, then `Send an activity`
 
     Set the text of the message to:
 
         I got an error: {dialog.api_response.content.message}
 
-18. To be safe, let's clean up the invalid value which otherwise would persist. Use the "+", select `Memory Manipulation >`, then select `Delete a property`
+19. To be safe, let's clean up the invalid value which otherwise would persist. Use the "+", select `Memory Manipulation >`, then select `Delete a property`
 
     Set the property to:
 
@@ -156,11 +155,11 @@ After making an HTTP request, we need to test the status of the response. To do 
 
 ## Test in Emulator
 
-18. Restart the bot again, and open it in emulator.
+20. Restart the bot again, and open it in emulator.
 
     ![](./assets/02/restart-bot.gif)
 
-19. After the greeting, send `weather` to the bot.
+21. After the greeting, send `weather` to the bot.
 
     The bot will prompt you for a zipcode. Give it your home zipcode, and seconds later, you should see the current weather conditions!
 

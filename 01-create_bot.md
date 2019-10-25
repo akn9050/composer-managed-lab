@@ -8,7 +8,7 @@ new folder on your computer with all the files necessary to build, test and run 
 
 1. From the home screen, select `New` from the upper left corner.
 You'll be presented with a dialog with options to either create an empty bot project from scratch, or to create one based on a template.
-
+  
     For this workshop, make sure `Create from Scratch` selected and click `Next`
 
    <img src="./assets/01/create-1.png" style="background-color:white" width = "800" />
@@ -18,7 +18,7 @@ You'll be presented with a dialog with options to either create an empty bot pro
     Let's call it:
      ```
      weatherBot
-     ```` 
+     ```
      
      and give it a description:
      ```

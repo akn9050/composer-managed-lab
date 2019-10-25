@@ -44,11 +44,11 @@
 
 10. In the `Unrecognized Prompt` field, enter:
 
-       - Sorry, I do not understand '{this.value}'. Please specify a zipcode in the form 12345
+        - Sorry, I do not understand '{this.value}'. Please specify a zipcode in the form 12345
 
      In the `Invalid Prompt` field, also enter:
 
-       - Sorry, '{this.value}' is not valid. I'm looking for a 5 digit number as zipcode. Please specify a zipcode in the form 12345
+        - Sorry, '{this.value}' is not valid. I'm looking for a 5 digit number as zipcode. Please specify a zipcode in the form 12345
 
 
 11. In `Validation Rules`, type:

@@ -45,7 +45,7 @@ This workshop is structured to start simple and quickly layer in sophisticated c
 - Building and responding with adaptive cards
 - Handling interruptions in the conversation flow
 - Author more than one dialog that help your bot fulfill more than one scenario 
-​
+
 ## Building blocks
 
 We will cover the following building blocks as we create a `Weather bot` using Bot Framework Composer.

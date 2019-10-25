@@ -25,9 +25,9 @@ You'll be presented with a dialog with options to either create an empty bot pro
      a friendly bot who can talk about the weather.
      ```
 
-      > Make sure not to put any spaces or special characters in the bot's name.
+      * Make sure not to put any spaces or special characters in the bot's name.
 
-      > Leave the `Location` field with its default value - this will put the bot project into Composer's default project folder where it will be easy to find.  
+      * Leave the `Location` field with its default value - this will put the bot project into Composer's default project folder where it will be easy to find.  
 
       <img src="./assets/01/create-2.png" style="background-color:white" width = "800" />
 

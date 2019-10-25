@@ -43,13 +43,11 @@
    ![](./assets/03/tab-exceptions.png)
 
 10. In the `Unrecognized Prompt` field, enter:
-
+  
         - Sorry, I do not understand '{this.value}'. Please specify a zipcode in the form 12345
-
       In the `Invalid Prompt` field, also enter:
 
         - Sorry, '{this.value}' is not valid. I'm looking for a 5 digit number as zipcode. Please specify a zipcode in the form 12345
-
 11. In `Validation Rules`, type:
       > validation rule 1 says we need a five characters
     
@@ -66,11 +64,11 @@
 
       > Make sure to press enter to add the rule!
 
-  Your properties pane should look like this:
+   Your properties pane should look like this:
 
    ![](./assets/03/zipcode-exceptions.png)
   
-  And your flow should look like this:
+   And your flow should look like this:
 
    ![](./assets/03/zipcode-flow.png)
   
@@ -86,7 +84,7 @@
 
 ## Add an HTTP request
 
-The http request action is found under the `Access external resources >` menu in the flow "+" button.
+  The http request action is found under the `Access external resources >` menu in the flow "+" button.
 
 12. Add an `Http Request` step to your flow.
 

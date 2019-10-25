@@ -54,42 +54,35 @@
 
 10. In `Validation Rules`, type:
       > validation rule 1 says we need a five characters
-      ```
-      length(this.value) == 5
-      ```
+    
+        length(this.value) == 5
 
       and then press enter.
 
       > validation rule 2 says we need a number
-      Then, type: 
-      ```
-      int(this.value) != null
-      ```
+        Then, type: 
 
+        int(this.value) != null
+  
       and then press enter.
 
       > Make sure to press enter to add the rule!
 
 Your properties pane should look like this:
 
-<center>
-<img src="./assets/03/zipcode-exceptions.png" style="background-color:white" width = "400" />
-</center>
-
+  ![](./assets/03/zipcode-exceptions.png)
+  
 And your flow should look like this:
 
-<center>
-<img src="./assets/03/zipcode-flow.png" style="background-color:white" width = "400" />
-</center>
-
+  ![](./assets/03/zipcode-flow.png)
+  
 With these options set, we have a dialog that will prompt the user for a zipcode. If the user gives a valid 5 digit zipcode, the prompt will store the value in `user.zipcode` and move on. If the user gives an invalid zipcode (e.g. `tomato` or `123456`), the prompt will present an error message and repeat until a valid response is received.
 
-> There are some options in the footer of the prompt properties that can be used to tune how the prompt works.
+  > There are some options in the footer of the prompt properties that can be used to tune how the prompt works.
 
-> Max turn count can be used to control how many times the bot will reprompt after invalid responses.
+  > Max turn count can be used to control how many times the bot will reprompt after invalid responses.
 
-> By default, prompts will be skip if the bound 
-property already has a value. Always prompt, when enabled, will cause the prompt to appear even if the value is already known. Leave this unchecked for now.
+  > By default, prompts will be skip if the bound property already has a value. Always prompt, when enabled, will cause the prompt to appear even if the value is already known. Leave this unchecked for now.
 
 After this action occurs, the bot can use `{user.zipcode}` in messages, and more importantly, in calls to external APIs!
 
@@ -99,99 +92,79 @@ The http request action is found under the `Access external resources >` menu in
 
 11. Add an `Http Request` step to your flow.
 
-<center>
-<img src="./assets/03/http-step.png" style="background-color:white" width = "300" />
-</center>
+    ![](./assets/03/http-step.png)
 
 12. In the properties editor,
 
       Set the method to `GET`
 
       Set the url to:    
-      ```
-      http://weatherbot-ignite-2019.azurewebsites.net/api/getWeather?zipcode={user.zipcode}
-      ```
+
+        http://weatherbot-ignite-2019.azurewebsites.net/api/getWeather?zipcode={user.zipcode}
 
       Set the Result property to:
-      ```
-      dialog.api_response
-      ```
 
-<center>
-<img src="./assets/03/http-props.png" style="background-color:white" width = "400" />
-</center>
+        dialog.api_response
+
+    ![](./assets/03/http-props.png)
 
 This will cause the bot to make an HTTP request to the url specified. The reference to `{user.zipcode}` will be replaced by a live value from the bot's memory.
 
-> HTTP action sets the following information in the `Result property`: statusCode, reasonPhrase, content, headers. Setting the `Result property` to `dialog.api_response` means we can access those values via `dialog.api_response.statusCode`, `dialog.api_response.reasonPhrase`, `dialog.api_response.content` and `dialog.api_response.headers`. If the response is json, it will be a deserialized object available via `dialog.api_response.content`.
+ > HTTP action sets the following information in the `Result property`: statusCode, reasonPhrase, content, headers. Setting the `Result property` to `dialog.api_response` means we can access those values via `dialog.api_response.statusCode`, `dialog.api_response.reasonPhrase`, `dialog.api_response.content` and `dialog.api_response.headers`. If the response is json, it will be a deserialized object available via `dialog.api_response.content`.
 
 After making an HTTP request, we need to test the status of the response. To do this, we'll use an If/Else branch.
 
 13. Use the '+' button, then choose `Flow`, then choose  `Branch: If/Else`
 
 14. In the property editor on the right, set the `condition` field to:
-```
-dialog.api_response.statusCode == 200
-```
+
+        dialog.api_response.statusCode == 200
 
 15. In the `true` branch, use the "+" button, then select `Manage properties >`, then `Set a Property`
 
       Set Property to:
-      ```
-      dialog.weather
-      ```
 
+        dialog.weather
+  
       Set Value to:
-      ```
-      dialog.api_response.content
-      ```
 
-<img src="./assets/03/set-property-condition.png" style="background-color:white" width = "600" />
+        dialog.api_response.content
+
+    ![](./assets/03/set-property-condition.png)
 
 16. Still in the `true` branch, use the "+" button, then select `Send Messages >`, then `Send a response`
 
     Set the text of the message to:
-    ```
-    The weather is {dialog.weather.weather} and the temp is {dialog.weather.temp}&deg;
-    ```
 
-<center>
-<img src="./assets/03/ifelse.png" style="background-color:white" width = "400" />
-</center>
+        The weather is {dialog.weather.weather} and the temp is {dialog.weather.temp}&deg;
+    
+    ![](./assets/03/ifelse.png)
 
 17. Now, in the `false` branch, use the "+" button, then select `Send Messages >`, then `Send an activity`
 
     Set the text of the message to:
-    ```
-    I got an error: {dialog.api_response.content.message}
-    ```
+
+        I got an error: {dialog.api_response.content.message}
 
 18. To be safe, let's clean up the invalid value which otherwise would persist. Use the "+", select `Memory Manipulation >`, then select `Delete a property`
 
     Set the property to:
-    ```
-    user.zipcode
-    ```
 
-<center>
-<img src="./assets/03/ifelse2.png" style="background-color:white" width = "400" />
-</center>
+        user.zipcode
+    
+   ![](./assets/03/ifelse2.png)
 
 ## Test in Emulator
 
 18. Restart the bot again, and open it in emulator.
 
-<center>
-<img src="./assets/02/restart-bot.gif" style="background-color:white" width = "300" />
-</center>
+    ![](./assets/02/restart-bot.gif)
 
 19. After the greeting, send `weather` to the bot.
 
-The bot will prompt you for a zipcode. Give it your home zipcode, and seconds later, you should see the current weather conditions!
+    The bot will prompt you for a zipcode. Give it your home zipcode, and seconds later, you should see the current weather conditions!
 
-<center>
-<img src="./assets/03/basic-weather.gif" style="background-color:white" width = "300" />
-</center>
+    ![](./assets/03/basic-weather.gif)
 
 If you ask for the weather again, notice that the bot doesn't prompt for a zipcode the second time. Remember, this is because `user.zipcode` is already set. Had we checked `always prompt,` the bot would ask each time. Go back to step 10, check `Always prompt` and try again! Your bot will ask for a zipcode everytime you re-start the conversation in emulator.
 

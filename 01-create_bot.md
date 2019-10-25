@@ -10,7 +10,7 @@ new folder on your computer with all the files necessary to build, test and run 
 You'll be presented with a dialog with options to either create an empty bot project from scratch, or to create one based on a template.
 For this workshop, make sure `Create from Scratch` selected and click `Next`.test
 
-![](./assets/01/create-1.png)
+  ![](./assets/01/create-1.png)
    
 2. The second screen asks for a `Name` and `Description` of your bot.
 
@@ -28,7 +28,7 @@ For this workshop, make sure `Create from Scratch` selected and click `Next`.tes
 
       * Leave the `Location` field with its default value - this will put the bot project into Composer's default project folder where it will be easy to find.  
 
-![](./assets/01/create-2.png)
+     ![](./assets/01/create-2.png)
    
 3. Click `Next`, and Composer will create the project for you!
 
@@ -37,13 +37,13 @@ For this workshop, make sure `Create from Scratch` selected and click `Next`.tes
 
 After creating your bot, Composer will load the new bot's `Main` dialog in the editor.  It should look like this:
 
-<img src="./assets/01/empty-main-dialog.png" style="background-color:white" width = "800" />
+![](./assets/01/empty-main-dialog.png)
 
 Each dialog contains one or more `Triggers` that define the actions available to the bot while the dialog is active. Right now the dialog is empty, so the bot won't do anything.
 
 As a refresher, here are the constituent parts of a dialog - 
 
-<img src="./assets/01/adaptive-dialog-anatomy.png" style="background-color:white" width = "800" />
+![](./assets/01/adaptive-dialog-anatomy.png)
 
 You will notice that the new bot is pre-configured with one trigger in the left dialogs window - `Handle ConversationUpdate`. 
 
@@ -53,7 +53,7 @@ You will notice that the new bot is pre-configured with one trigger in the left 
 
 2. You will see a new flow has been added to the dialog. 
 
-![](./assets/01/new-flow.png)
+   ![](./assets/01/new-flow.png)
 
 3. To help keep the bot organized, let's rename this trigger to something that describes what it does.
 
@@ -63,7 +63,7 @@ You will notice that the new bot is pre-configured with one trigger in the left 
       
        WelcomeTheUser
 
-![](./assets/01/rename-trigger.gif)
+   ![](./assets/01/rename-trigger.gif)
       
   Now, let's actually make the bot do something! 
   Inside the flow, you'll see that the teal `Trigger` box has a line below it that includes in a "+" button.
@@ -74,7 +74,7 @@ You will notice that the new bot is pre-configured with one trigger in the left 
 
 4. Click the "+" button and select the first menu item `Send Messages`, and then selec the first item from the sub-menu: `Send an Activity`
 
-![}(./assets/01/add-send-activity.gif)
+   ![](./assets/01/add-send-activity.gif)
 
 5. Select the new `Send an Activity` action in the flow and it's properties will appear on the right hand side of the screen.  This action has only one main property - the text of the activity to send.
 
@@ -84,7 +84,7 @@ You will notice that the new bot is pre-configured with one trigger in the left 
 
   Your bot should now look like this:
 
-![](./assets/01/send-activity.png)
+   ![](./assets/01/send-activity.png)
 
   Next, let's temporarily disable the recognizer for the main dialog. We will get back to this in the next step.
 
@@ -92,7 +92,7 @@ You will notice that the new bot is pre-configured with one trigger in the left 
 
 8. In the property editor on the right hand side, click on `Recognizer type` and select `None`.
 
-![](./assets/01/recognizer-none.png)
+   ![](./assets/01/recognizer-none.png)
 
    > Dialogs in Composer support 2 different recognizer types - LUIS, Regex. Unless you need intent classification or entity extraction, we can remove recognizer by setting it to `None`.
 
@@ -104,11 +104,11 @@ Now that our new bot has its first simple feature, let's launch it in the emulat
 
 10. After a few seconds, a second link will appear next to the button thats `Test bot in emulator`.  Click this link to open Emulator and connect.
 
-![](./assets/01/start-bot.gif)
+   ![](./assets/01/start-bot.gif)
 
   You should see a window like this appear:
 
-![](./assets/01/emulator-launch.png)
+   ![](./assets/01/emulator-launch.png)
 
 And the bot should immediately greet you with the message we just configured:
 

@@ -52,7 +52,7 @@ You will notice that the new bot is pre-configured with one trigger in the left 
 
 2. You will see a new flow has been added to the dialog. 
 
-   ![](./assets/01/new-flow.png)
+![](./assets/01/new-flow.png)
 
 3. To help keep the bot organized, let's rename this trigger to something that describes what it does.
 
@@ -62,7 +62,7 @@ You will notice that the new bot is pre-configured with one trigger in the left 
       
        WelcomeTheUser
 
-      ![](./assets/01/rename-trigger.gif)
+![](./assets/01/rename-trigger.gif)
       
   Now, let's actually make the bot do something! 
   Inside the flow, you'll see that the teal `Trigger` box has a line below it that includes in a "+" button.
@@ -73,19 +73,17 @@ You will notice that the new bot is pre-configured with one trigger in the left 
 
 4. Click the "+" button and select the first menu item `Send Messages`, and then selec the first item from the sub-menu: `Send an Activity`
 
-   ![}(./assets/01/add-send-activity.gif)
+![}(./assets/01/add-send-activity.gif)
 
 5. Select the new `Send an Activity` action in the flow and it's properties will appear on the right hand side of the screen.  This action has only one main property - the text of the activity to send.
 
 6. Type a welcome message into this field. It is always a good idea to have your bot introduce itself and explain it's main features.  So let's make the welcome message something like:
 
-    ```
-    Hi! I'm a friendly bot that can help with the weather. Try saying WEATHER or FORECAST.
-    ```
+       Hi! I'm a friendly bot that can help with the weather. Try saying WEATHER or FORECAST.
 
   Your bot should now look like this:
 
-  ![](./assets/01/send-activity.png)
+![](./assets/01/send-activity.png)
 
   Next, let's temporarily disable the recognizer for the main dialog. We will get back to this in the next step.
 
@@ -93,7 +91,7 @@ You will notice that the new bot is pre-configured with one trigger in the left 
 
 8. In the property editor on the right hand side, click on `Recognizer type` and select `None`.
 
-   ![](./assets/01/recognizer-none.png)
+![](./assets/01/recognizer-none.png)
 
    > Dialogs in Composer support 2 different recognizer types - LUIS, Regex. Unless you need intent classification or entity extraction, we can remove recognizer by setting it to `None`.
 
@@ -105,11 +103,11 @@ Now that our new bot has its first simple feature, let's launch it in the emulat
 
 10. After a few seconds, a second link will appear next to the button thats `Test bot in emulator`.  Click this link to open Emulator and connect.
 
-    ![](./assets/01/start-bot.gif)
+![](./assets/01/start-bot.gif)
 
   You should see a window like this appear:
 
-  ![](./assets/01/emulator-launch.png)
+![](./assets/01/emulator-launch.png)
 
 And the bot should immediately greet you with the message we just configured:
 

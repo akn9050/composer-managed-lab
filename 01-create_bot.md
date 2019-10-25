@@ -9,7 +9,8 @@ new folder on your computer with all the files necessary to build, test and run 
 1. From the home screen, select `New` from the upper left corner.
 You'll be presented with a dialog with options to either create an empty bot project from scratch, or to create one based on a template.
 For this workshop, make sure `Create from Scratch` selected and click `Next`.test
-   ![](./assets/01/create-1.png)
+
+![](./assets/01/create-1.png)
    
 2. The second screen asks for a `Name` and `Description` of your bot.
 
@@ -27,8 +28,8 @@ For this workshop, make sure `Create from Scratch` selected and click `Next`.tes
 
       * Leave the `Location` field with its default value - this will put the bot project into Composer's default project folder where it will be easy to find.  
 
-      <img src="./assets/01/create-2.png" style="background-color:white" width = "800" />
-
+![](./assets/01/create-2.png)
+   
 3. Click `Next`, and Composer will create the project for you!
 
 

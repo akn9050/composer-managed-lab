@@ -11,9 +11,9 @@ You'll be presented with a dialog with options to either create an empty bot pro
   
     For this workshop, make sure `Create from Scratch` selected and click `Next`
 
-   <img src="./assets/01/create-1.png" style="background-color:white" width = "800" />
+  ![](./assets/01/create-1.png)
 
-2. The second screen asks for a `Name` and `Description` of your bot.
+1. The second screen asks for a `Name` and `Description` of your bot.
 
     Let's call it:
      ```

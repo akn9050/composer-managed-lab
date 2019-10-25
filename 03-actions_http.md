@@ -122,7 +122,6 @@
         dialog.api_response.content
 
     ![](./assets/03/set-property-condition.png)
-
 17. Still in the `true` branch, use the "+" button, then select `Send Messages >`, then `Send a response`
 
     Set the text of the message to:
@@ -130,7 +129,6 @@
         The weather is {dialog.weather.weather} and the temp is {dialog.weather.temp}&deg;
     
     ![](./assets/03/ifelse.png)
-
 18. Now, in the `false` branch, use the "+" button, then select `Send Messages >`, then `Send an activity`
 
     Set the text of the message to:
@@ -139,12 +137,10 @@
 
 19. To be safe, let's clean up the invalid value which otherwise would persist. Use the "+", select `Memory Manipulation >`, then select `Delete a property`
 
-    Set the property to:
+     Set the property to:
 
-        user.zipcode
-    
+        user.zipcode    
    ![](./assets/03/ifelse2.png)
-
   ## Test in Emulator
 
 20. Restart the bot again, and open it in emulator.

@@ -9,9 +9,9 @@ new folder on your computer with all the files necessary to build, test and run 
 1. From the home screen, select `New` from the upper left corner.
 You'll be presented with a dialog with options to either create an empty bot project from scratch, or to create one based on a template.
   
-    For this workshop, make sure `Create from Scratch` selected and click `Next`
+   For this workshop, make sure `Create from Scratch` selected and click `Next`
 
-  ![](./assets/01/create-1.png)
+   ![](./assets/01/create-1.png)
 
 1. The second screen asks for a `Name` and `Description` of your bot.
 

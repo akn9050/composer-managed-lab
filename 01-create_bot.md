@@ -52,31 +52,28 @@ You will notice that the new bot is pre-configured with one trigger in the left 
 
 2. You will see a new flow has been added to the dialog. 
 
-   <img src="./assets/01/new-flow.png" style="background-color:white" width = "800" />
+   ![](./assets/01/new-flow.png)
 
 3. To help keep the bot organized, let's rename this trigger to something that describes what it does.
 
-      In the `property editor` on the right side of the screen, click on the name of the trigger ("Handle ConversationUpdate"). You'll be able to update the title there, and the change will be instantly reflected in the dialog and navigation on the left.
+     In the `property editor` on the right side of the screen, click on the name of the trigger ("Handle ConversationUpdate"). You'll be able to update the title there, and the change will be instantly reflected in the dialog and navigation on the left.
 
       Rename ths trigger to:
-      ```
-      WelcomeTheUser
-      ````
+      
+       WelcomeTheUser
 
-      <img src="./assets/01/rename-trigger.gif" style="background-color:white" width = "800" />
+      ![](./assets/01/rename-trigger.gif)
+      
+  Now, let's actually make the bot do something! 
+  Inside the flow, you'll see that the teal `Trigger` box has a line below it that includes in a "+" button.
 
-Now, let's actually make the bot do something! 
-Inside the flow, you'll see that the teal `Trigger` box has a line below it that includes in a "+" button.
+  The "+" button can be used to add `Actions` to the conversation flow. You can use this to add actions to the end of a flow, or insert  actions at an earlier point.
 
-The "+" button can be used to add `Actions` to the conversation flow. You can use this to add actions to the end of a flow, or insert actions at an earlier point.
-
-For now, let's instruct the bot to send a simple greeting.
+  For now, let's instruct the bot to send a simple greeting.
 
 4. Click the "+" button and select the first menu item `Send Messages`, and then selec the first item from the sub-menu: `Send an Activity`
 
-<center>
-<img src="./assets/01/add-send-activity.gif" style="background-color:white" width = "400" />
-</center>
+   ![}(./assets/01/add-send-activity.gif)
 
 5. Select the new `Send an Activity` action in the flow and it's properties will appear on the right hand side of the screen.  This action has only one main property - the text of the activity to send.
 
@@ -86,43 +83,37 @@ For now, let's instruct the bot to send a simple greeting.
     Hi! I'm a friendly bot that can help with the weather. Try saying WEATHER or FORECAST.
     ```
 
-Your bot should now look like this:
+  Your bot should now look like this:
 
-<img src="./assets/01/send-activity.png" style="background-color:white" width = "800" />
+  ![](./assets/01/send-activity.png)
 
-Next, let's temporarily disable the recognizer for the main dialog. We will get back to this in the next step.
+  Next, let's temporarily disable the recognizer for the main dialog. We will get back to this in the next step.
 
 7. Click on `WeatherBot.Main` in the left pane to bring up the properties editor for the root dialog.
 
-6. In the property editor on the right hand side, click on `Recognizer type` and select `None`.
+8. In the property editor on the right hand side, click on `Recognizer type` and select `None`.
 
-<center>
-<img src="./assets/01/recognizer-none.png" style="background-color:white" width = "300" />
-</center>
+   ![](./assets/01/recognizer-none.png)
 
-> Dialogs in Composer support 2 different recognizer types - LUIS, Regex. Unless you need intent classification or entity extraction, we can remove recognizer by setting it to `None`.
+   > Dialogs in Composer support 2 different recognizer types - LUIS, Regex. Unless you need intent classification or entity extraction, we can remove recognizer by setting it to `None`.
 
 # Start your bot and test it
 
 Now that our new bot has its first simple feature, let's launch it in the emulator and make sure everything works.
 
-7. Click the `Start Bot` button in the upper right hand corner of the screen.  This tells Composer to launch the bot's runtime (an external app powered by the Bot Framework SDK) and updates it with the latest content and settings from Composer.
+9. Click the `Start Bot` button in the upper right hand corner of the screen.  This tells Composer to launch the bot's runtime (an external app powered by the Bot Framework SDK) and updates it with the latest content and settings from Composer.
 
-8. After a few seconds, a second link will appear next to the button thats `Test bot in emulator`.  Click this link to open Emulator and connect.
+10. After a few seconds, a second link will appear next to the button thats `Test bot in emulator`.  Click this link to open Emulator and connect.
 
-<center>
-<img src="./assets/01/start-bot.gif" style="background-color:white" width = "400" />
-</center>
+    ![](./assets/01/start-bot.gif)
 
-You should see a window like this appear:
+  You should see a window like this appear:
 
-<img src="./assets/01/emulator-launch.png" style="background-color:white" width = "800" />
+  ![](./assets/01/emulator-launch.png)
 
 And the bot should immediately greet you with the message we just configured:
 
-<center>
-<img src="./assets/01/greeting-in-emulator.png" style="background-color:white" width = "300" />
-</center>
+![](./assets/01/greeting-in-emulator.png)
 
 We now have a working bot, and we're ready to add some more substantial functionality!
 

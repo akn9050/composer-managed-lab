@@ -79,7 +79,7 @@
 
    After this action occurs, the bot can use `{user.zipcode}` in messages, and more importantly, in calls to external APIs!
 
-   ## Add an HTTP request
+  ## Add an HTTP request
 
    The http request action is found under the `Access external resources >` menu in the flow "+" button.
 
@@ -145,7 +145,7 @@
     
    ![](./assets/03/ifelse2.png)
 
-## Test in Emulator
+  ## Test in Emulator
 
 20. Restart the bot again, and open it in emulator.
 

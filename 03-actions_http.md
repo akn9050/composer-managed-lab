@@ -65,29 +65,27 @@
       > Make sure to press enter to add the rule!
 
    Your properties pane should look like this:
-     ![](./assets/03/zipcode-exceptions.png)
-  
+     ![](./assets/03/zipcode-exceptions.png)  
    And your flow should look like this:
      ![](./assets/03/zipcode-flow.png)
   
    With these options set, we have a dialog that will prompt the user for a zipcode. If the user gives a valid 5 digit zipcode, the prompt will store the value in `user.zipcode` and move on. If the user gives an invalid zipcode (e.g. `tomato` or `123456`), the prompt will present an error message and repeat until a valid response is received.
 
-  > There are some options in the footer of the prompt properties that can be used to tune how the prompt works.
+   > There are some options in the footer of the prompt properties that can be used to tune how the prompt works.
 
-  > Max turn count can be used to control how many times the bot will reprompt after invalid responses.
+   > Max turn count can be used to control how many times the bot will reprompt after invalid responses.
 
-  > By default, prompts will be skip if the bound property already has a value. Always prompt, when enabled, will cause the prompt to appear even if the value is already known. Leave this unchecked for now.
+   > By default, prompts will be skip if the bound property already has a value. Always prompt, when enabled, will cause the prompt to appear even if the value is already known. Leave this unchecked for now.
 
    After this action occurs, the bot can use `{user.zipcode}` in messages, and more importantly, in calls to external APIs!
 
 ## Add an HTTP request
 
-  The http request action is found under the `Access external resources >` menu in the flow "+" button.
+   The http request action is found under the `Access external resources >` menu in the flow "+" button.
 
 12. Add an `Http Request` step to your flow.
 
     ![](./assets/03/http-step.png)
-
 13. In the properties editor,
 
       Set the method to `GET`
@@ -101,12 +99,11 @@
         dialog.api_response
 
     ![](./assets/03/http-props.png)
-
-  This will cause the bot to make an HTTP request to the url specified. The reference to `{user.zipcode}` will be replaced by a live value from the bot's memory.
+    This will cause the bot to make an HTTP request to the url specified. The reference to `{user.zipcode}` will be replaced by a live value from the bot's memory.
 
    > HTTP action sets the following information in the `Result property`: statusCode, reasonPhrase, content, headers. Setting the `Result property` to `dialog.api_response` means we can access those values via `dialog.api_response.statusCode`, `dialog.api_response.reasonPhrase`, `dialog.api_response.content` and `dialog.api_response.headers`. If the response is json, it will be a deserialized object available via `dialog.api_response.content`.
 
-After making an HTTP request, we need to test the status of the response. To do this, we'll use an If/Else branch.
+   After making an HTTP request, we need to test the status of the response. To do this, we'll use an If/Else branch.
 
 14. Use the '+' button, then choose `Flow`, then choose  `Branch: If/Else`
 

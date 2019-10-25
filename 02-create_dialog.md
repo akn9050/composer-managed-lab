@@ -31,7 +31,7 @@ First, we'll set up all the components and make sure they work together. Then, w
 
    ![](./assets/02/create-getweather.png)
    
-Composer created this new dialog with no triggers or actions defined. So let's go ahead and add a trigger for actions to execute when this dialog begins. 
+   Composer created this new dialog with no triggers or actions defined. So let's go ahead and add a trigger for actions to execute when this dialog begins. 
 
 4. Click on `+ New Trigger` in the left navigation pane. 
 

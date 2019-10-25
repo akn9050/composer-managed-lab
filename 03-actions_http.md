@@ -3,9 +3,9 @@
 1. In the explorer, click on `getWeather` to select the dialog and reveal the triggers it contains.
 2. Click on the `BeginDialog` trigger underneath getWeather.
 
-The first thing we need to do to check a user's local weather is collect the user's location. Our weather API accepts a 5 digit zipcode as a parameter.
+  The first thing we need to do to check a user's local weather is collect the user's location. Our weather API accepts a 5 digit zipcode as a parameter.
 
-So, let's prompt the user for a zipcode.
+  So, let's prompt the user for a zipcode.
 
 3. Click the "+" button in the flow and select `Ask a Question >`. You'll see a variety of options for asking for different types of input.
 4. Select `Prompt for text` from the sub-menu. 2 new nodes will appear in the flow!
@@ -14,55 +14,43 @@ So, let's prompt the user for a zipcode.
 
      > Prompt are broken down into a few pieces. We'll configure each separately.
 
-<center>
-<img src="./assets/03/empty-prompt.png" style="background-color:white" width = "400" />
-</center>
+   ![](./assets/03/empty-prompt.png)
 
 5. Click on the `Bot Asks` node. This part of the prompt represents the message the bot will send to the user requesting information. In the property editor set the prompt to:
-```
-What is your zipcode?
-```
+
+       What is your zipcode?
 
 5. Set the `Default value` property (next to Max turn count) to `'98052'` (include the quotes). 
 
-> By default prompts are configured to ask the user for information `Max turn count` number of times (defaults to 3). When this happens, the prompt will stop and set the `Default value` to the `Property` and move forward with the conversaiton. 
+   > By default prompts are configured to ask the user for information `Max turn count` number of times (defaults to 3). When this happens, the prompt will stop and set the `Default value` to the `Property` and move forward with the conversaiton. 
 
-<center>
-<img src="./assets/03/zipcode-prompt.png" style="background-color:white" width = "400" />
-</center>
+   ![](./assets/03/zipcode-prompt.png)
 
 6. Next, click the `User Answers` tab in the property editor. This part of the prompt represents the user's response, including where to store the value and how to pre-process it.
 
-<center>
-<img src="./assets/03/prompt-tabs.png" style="background-color:white" width = "400" />
-</center>
+   ![](./assets/03/prompt-tabs.png)
 
 7. Here, we can specify what property in memory will be used to store the user's response. In `Property to fill`, enter the value:
-      ```
-      user.zipcode
-      ```
 
-      For `Output Format`, select `trim`
+       user.zipcode
 
-<center>
-<img src="./assets/03/zipcode-answer.png" style="background-color:white" width = "400" />
-</center>
+     For `Output Format`, select `trim`
+
+   ![](./assets/03/zipcode-answer.png)
 
 8. Click on the `Exceptions` tab in the property editor. This section allows you to specify validation rules for the prompt, as well as error messages that will be used if the user provides an invalid response.
 
-<center>
-<img src="./assets/03/tab-exceptions.png" style="background-color:white" width = "300" />
-</center>
+   ![](./assets/03/tab-exceptions.png)
 
 9. In the `Unrecognized Prompt` field, enter:
-      ```
-      - Sorry, I do not understand '{this.value}'. Please specify a zipcode in the form 12345
-      ```
+
+       - Sorry, I do not understand '{this.value}'. Please specify a zipcode in the form 12345
+
 
       In the `Invalid Prompt` field, also enter:
-      ```
-      - Sorry, '{this.value}' is not valid. I'm looking for a 5 digit number as zipcode. Please specify a zipcode in the form 12345
-      ```
+
+       - Sorry, '{this.value}' is not valid. I'm looking for a 5 digit number as zipcode. Please specify a zipcode in the form 12345
+
 
 10. In `Validation Rules`, type:
       > validation rule 1 says we need a five characters

@@ -11,7 +11,7 @@ You'll be presented with a dialog with options to either create an empty bot pro
 
     For this workshop, make sure `Create from Scratch` selected and click `Next`
 
-<img src="./assets/01/create-1.png" style="background-color:white" width = "800" />
+   <img src="./assets/01/create-1.png" style="background-color:white" width = "800" />
 
 2. The second screen asks for a `Name` and `Description` of your bot.
 
@@ -29,7 +29,7 @@ You'll be presented with a dialog with options to either create an empty bot pro
 
       > Leave the `Location` field with its default value - this will put the bot project into Composer's default project folder where it will be easy to find.  
 
-<img src="./assets/01/create-2.png" style="background-color:white" width = "800" />
+      <img src="./assets/01/create-2.png" style="background-color:white" width = "800" />
 
 3. Click `Next`, and Composer will create the project for you!
 
@@ -54,7 +54,7 @@ You will notice that the new bot is pre-configured with one trigger in the left 
 
 2. You will see a new flow has been added to the dialog. 
 
-<img src="./assets/01/new-flow.png" style="background-color:white" width = "800" />
+   <img src="./assets/01/new-flow.png" style="background-color:white" width = "800" />
 
 3. To help keep the bot organized, let's rename this trigger to something that describes what it does.
 
@@ -65,7 +65,7 @@ You will notice that the new bot is pre-configured with one trigger in the left 
       WelcomeTheUser
       ````
 
-<img src="./assets/01/rename-trigger.gif" style="background-color:white" width = "800" />
+      <img src="./assets/01/rename-trigger.gif" style="background-color:white" width = "800" />
 
 Now, let's actually make the bot do something! 
 Inside the flow, you'll see that the teal `Trigger` box has a line below it that includes in a "+" button.

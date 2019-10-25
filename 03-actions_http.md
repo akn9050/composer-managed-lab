@@ -65,9 +65,9 @@
       > Make sure to press enter to add the rule!
 
    Your properties pane should look like this:
-     ![](./assets/03/zipcode-exceptions.png)  
+    ![](./assets/03/zipcode-exceptions.png)  
    And your flow should look like this:
-     ![](./assets/03/zipcode-flow.png)
+    ![](./assets/03/zipcode-flow.png)
   
    With these options set, we have a dialog that will prompt the user for a zipcode. If the user gives a valid 5 digit zipcode, the prompt will store the value in `user.zipcode` and move on. If the user gives an invalid zipcode (e.g. `tomato` or `123456`), the prompt will present an error message and repeat until a valid response is received.
 
@@ -79,7 +79,7 @@
 
    After this action occurs, the bot can use `{user.zipcode}` in messages, and more importantly, in calls to external APIs!
 
-## Add an HTTP request
+   ## Add an HTTP request
 
    The http request action is found under the `Access external resources >` menu in the flow "+" button.
 
